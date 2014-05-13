@@ -4,7 +4,6 @@ filetype plugin indent on
 
 syntax enable
 
-
 set tabstop=2             " Tab is 2 chars long
 set shiftwidth=2          " Indent/Outdent by 2 spaces
 set expandtab
@@ -43,3 +42,5 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=NONE
 autocmd VimEnter,Colorscheme * :hi Visual ctermbg=238
 autocmd VimEnter,Colorscheme * :hi ColorColumn ctermbg=234
+autocmd VimEnter,Colorscheme * :hi Pmenu ctermbg=236
+autocmd VimEnter,Colorscheme * :hi PmenuSel ctermbg=darkblue ctermfg=255
