@@ -15,11 +15,14 @@ if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 fi
 
-export PS1="\e[92m\u@\h \e[93m\w\e[92m\$(__git_ps1) $ \e[0m"
-
-alias ls="ls -l -G"
+#export PS1="\e[92m\]\u@\h \e[93m\w\e[92m\$(__git_ps1) $ \e[0m"
+export PS1="\[$(tput setaf 2)\]\u@\h\[$(tput setaf 3)\] \w\[$(tput setaf 2)\]\$(__git_ps1) $\[$(tput sgr0)\] "
+alias ls="ls -o -G"
 alias be="bundle exec"
 alias ber="bundle exec rake"
 
+alias gac="cd /Users/tom.baker/dev/sage_one_advanced"
+alias gacuk="cd /Users/tom.baker/dev/sage_one_gac_uk"
+alias gacus="cd /Users/tom.baker/dev/sage_one_gac_us"
 
 

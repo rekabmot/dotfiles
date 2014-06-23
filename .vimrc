@@ -46,5 +46,6 @@ autocmd VimEnter,Colorscheme * :hi Pmenu ctermbg=236
 autocmd VimEnter,Colorscheme * :hi PmenuSel ctermbg=darkblue ctermfg=255
 autocmd VimEnter,Colorscheme * :hi StatusLine ctermbg=lightblue ctermfg=black
 autocmd VimEnter,Colorscheme * :hi StatusLineNC ctermbg=234 ctermfg=white
+autocmd QuickFixCmdPost *grep* cwindow
 
 au BufNewFile,BufRead *.ui set filetype=ruby

@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/tom.baker/dev/sage_one_advanced/host_app/lib/countries'
-let g:netrw_dirhist_2='/Users/tom.baker/dev/sage_one_advanced/host_app/app/extra_core/journal_handlers'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/tom.baker/dev/sage_one_advanced/project_fuji/fuji_contacts/app'
+let g:netrw_dirhist_2='/Users/tom.baker/dev/sage_one_advanced/project_fuji/fuji_contacts/app/controllers'
+let g:netrw_dirhist_3='/Users/tom.baker/dev/sage_one_advanced/project_fuji/fuji_contacts/app/controllers/fuji_contacts'
+let g:netrw_dirhist_4='/Users/tom.baker/dev/sage_one_advanced/advanced_uk/app/views/fuji_reporting/reports'
+let g:netrw_dirhist_5='/Users/tom.baker/dev/sage_one_advanced/guides'
