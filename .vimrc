@@ -1,5 +1,9 @@
 execute pathogen#infect()
 
+let g:airline_powerline_fonts = 1
+
+set laststatus=2
+
 filetype plugin indent on
 
 syntax enable
@@ -18,9 +22,12 @@ set smartindent
 set scrolloff=5           " Scroll lines before edge of screen
 set scrolljump=5           " Scroll lines before edge of screen
 
+set clipboard=unnamed
+
 map <F12> :call ToggleMouseMode()<CR>
 map <F2> :NERDTreeToggle<CR>
 map <F3> :%s/\s\+$//e<CR>
+map <F4> <Esc>Orequire 'pry'; binding.pry
 
 
 set splitright
@@ -30,16 +37,14 @@ colorscheme grb256
 
 set smartcase
 
-set colorcolumn=80
+set colorcolumn=120
+
+set wildmenu
+set wildmode=full
 
 highlight ExtraWhitespace ctermbg=236 guibg=#262D51
 match ExtraWhitespace /\s\+$/
 
-let g:indent_guides_enable_on_vim_startup = 1
-
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=NONE
 autocmd VimEnter,Colorscheme * :hi Visual ctermbg=238
 autocmd VimEnter,Colorscheme * :hi ColorColumn ctermbg=234
 autocmd VimEnter,Colorscheme * :hi Pmenu ctermbg=236
@@ -49,3 +54,4 @@ autocmd VimEnter,Colorscheme * :hi StatusLineNC ctermbg=234 ctermfg=white
 autocmd QuickFixCmdPost *grep* cwindow
 
 au BufNewFile,BufRead *.ui set filetype=ruby
+au BufNewFile,BufRead *.scss set filetype=css
