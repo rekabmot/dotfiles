@@ -28,6 +28,8 @@ map <F12> :call ToggleMouseMode()<CR>
 map <F2> :NERDTreeToggle<CR>
 map <F3> :%s/\s\+$//e<CR>
 map <F4> <Esc>Orequire 'pry'; binding.pry
+map <F5> <Esc>:set cursorline! cursorcolumn!<CR>
+map <F6> <Esc>:SyntasticCheck<CR>
 
 
 set splitright
@@ -41,12 +43,14 @@ set colorcolumn=120
 
 set wildmenu
 set wildmode=full
+set backspace=indent,eol,start
 
 highlight ExtraWhitespace ctermbg=236 guibg=#262D51
 match ExtraWhitespace /\s\+$/
 
 autocmd VimEnter,Colorscheme * :hi Visual ctermbg=238
 autocmd VimEnter,Colorscheme * :hi ColorColumn ctermbg=234
+autocmd VimEnter,Colorscheme * :hi CursorColumn ctermbg=234
 autocmd VimEnter,Colorscheme * :hi Pmenu ctermbg=236
 autocmd VimEnter,Colorscheme * :hi PmenuSel ctermbg=darkblue ctermfg=255
 autocmd VimEnter,Colorscheme * :hi StatusLine ctermbg=lightblue ctermfg=black
@@ -55,3 +59,10 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 au BufNewFile,BufRead *.ui set filetype=ruby
 au BufNewFile,BufRead *.scss set filetype=css
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
