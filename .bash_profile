@@ -7,12 +7,19 @@ export MYSQL_PASSWORD=admin
 export CARBON_ADDRESSES_ENABLED=true
 export GAC_APP_REGION=ukie
 
+export SYNCOPHANT_CLIENT_ID=51791293993-m9m5qmhranfqf5ufl7c59k3pm23hbtb9.apps.googleusercontent.com
+export SYNCOPHANT_CLIENT_SECRET=NLfTdH5kiXv3nXve5eKbnBeJ
+
 alias vim=/usr/local/bin/vim
 alias vi=/usr/local/bin/vim
 
+export GAC_GATEWAY_SERVICE_ENABLED=true
+export CBC_MODE=false
+export BASE_URL=http://mysageone.lvh.me:3000
+
 export EDITOR=vim
 
-export ENVIRONMENT=foo
+export ENVIRONMENT=development
 
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"
@@ -64,6 +71,19 @@ function docker_start() {
   docker-machine env
   eval "$(docker-machine env default)"
   eval "$(aws ecr get-login --region eu-west-1)"
+}
+
+function commit() {
+  git commit $@;
+  parrot --delay=50 --loops=3;
+}
+
+function restore() {
+  git checkout master
+  git fetch
+  git branch -D $1
+  git checkout origin/$1
+  git checkout -b $1
 }
 
 # docker_start

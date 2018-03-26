@@ -60,9 +60,16 @@ autocmd QuickFixCmdPost *grep* cwindow
 au BufNewFile,BufRead *.ui set filetype=ruby
 au BufNewFile,BufRead *.scss set filetype=css
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers = ['rubocop']
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+let g:vim_json_syntax_conceal = 0
+set rtp+=/usr/local/opt/fzf
+nmap ; :Files<CR>
+
+let g:gitgutter_realtime = 0
+
+" let g:indentLine_faster = 1
+let g:indentLine_enabled = 0
