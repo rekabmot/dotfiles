@@ -6,9 +6,7 @@ export MYSQL_USERNAME=root
 export MYSQL_PASSWORD=admin
 export CARBON_ADDRESSES_ENABLED=true
 export GAC_APP_REGION=ukie
-
-export SYNCOPHANT_CLIENT_ID=51791293993-m9m5qmhranfqf5ufl7c59k3pm23hbtb9.apps.googleusercontent.com
-export SYNCOPHANT_CLIENT_SECRET=NLfTdH5kiXv3nXve5eKbnBeJ
+export REDIS_HOST=localhost
 
 alias vim=/usr/local/bin/vim
 alias vi=/usr/local/bin/vim
@@ -55,6 +53,7 @@ alias gacuk="cd /Users/tom.baker/dev/sage_one_gac_uki"
 alias gacus="cd /Users/tom.baker/dev/sage_one_gac_us"
 alias rungac="itermocil mso_gac"
 alias runeverything="itermocil mso_gac; itermocil nae_deps; itermocil nae"
+alias bcd="export BCDATABASE_PATH=../bcdatabase_dev"
 
 alias gti="git"
 alias grep="grep --line-buffered"
@@ -66,11 +65,15 @@ set -o vi
 export NVM_DIR="/Users/tom.baker/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-function docker_start() {
-  docker-machine start default
-  docker-machine env
-  eval "$(docker-machine env default)"
-  eval "$(aws ecr get-login --region eu-west-1)"
+# function docker_start() {
+#   docker-machine start default
+#   docker-machine env
+#   eval "$(docker-machine env default)"
+#   eval "$(aws ecr get-login --region eu-west-1)"
+# }
+
+function aws_login() {
+  eval "$(aws ecr get-login --region eu-west-1 --no-include-email)"
 }
 
 function commit() {
