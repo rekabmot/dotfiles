@@ -66,7 +66,7 @@ let g:ale_set_highlights = 0
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:vim_json_syntax_conceal = 0
-set rtp+=/usr/local/opt/fzf
+set rtp+=/home/developer/.linuxbrew/opt/fzf
 nmap ; :Files<CR>
 
 let g:gitgutter_realtime = 0
